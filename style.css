@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    linear-gradient(90deg, rgba(24,24,24,.82) 0%, rgba(70,70,70,.62) 46%, rgba(128,128,128,.34) 100%),
+    url("background.jpg") center center / cover no-repeat fixed;
+  color: #eff238;
+}
+.stage {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(18px, 5vw, 80px);
+}
+.quote-card {
+  width: min(760px, 88vw);
+  max-height: 92svh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vh, 18px);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.eyebrow, .source, .summary { margin: 0; }
+.eyebrow {
+  font-weight: 900;
+  font-size: clamp(.72rem, 1.3vw, 1rem);
+  opacity: .92;
+}
+h1 {
+  margin: 0;
+  font-weight: 950;
+  line-height: .95;
+  font-size: clamp(2.1rem, 7.5vw, 6.2rem);
+  max-width: 14ch;
+  text-wrap: balance;
+}
+.summary {
+  max-width: 62ch;
+  font-weight: 800;
+  line-height: 1.08;
+  font-size: clamp(.82rem, 1.85vw, 1.35rem);
+  color: rgba(239, 242, 56, .95);
+  text-transform: none;
+  font-style: italic;
+}
+.source {
+  max-width: 72ch;
+  font-size: clamp(.62rem, 1.2vw, .85rem);
+  line-height: 1.18;
+  font-weight: 900;
+  color: rgba(239, 242, 56, .82);
+}
+.controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+button {
+  border: 1px solid rgba(239, 242, 56, .7);
+  background: rgba(0,0,0,.18);
+  color: #eff238;
+  font-weight: 900;
+  letter-spacing: .06em;
+  padding: .65rem .85rem;
+  cursor: pointer;
+}
+button:hover { background: rgba(239, 242, 56, .12); }
+@media (max-width: 680px) {
+  .stage { align-items: flex-end; padding-bottom: 34px; }
+  .quote-card { width: 94vw; }
+  h1 { max-width: 13ch; }
+}
+@media (max-height: 620px) {
+  .quote-card { gap: 7px; }
+  h1 { font-size: clamp(1.7rem, 7vh, 4rem); }
+  .summary { font-size: clamp(.72rem, 2.4vh, 1rem); }
+  .source { font-size: clamp(.55rem, 1.8vh, .72rem); }
+  button { padding: .45rem .65rem; }
+}
